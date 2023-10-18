@@ -23,3 +23,8 @@ def get_users():
 def get_users(product_id):
     response = sup.table('product').select("name,price").eq("id",product_id).execute()
     return response
+
+@router.get("/image_with_product_id")
+def get_users(product_id):
+    response = sup.table('media').select("img_a").eq("id_product",product_id).execute()
+    return response.data[0]["img_a"]

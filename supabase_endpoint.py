@@ -14,7 +14,12 @@ key: str = os.environ.get("SUPABASE_KEY")
 sup: Client = create_client(url, key)
 # Cargar las variables de entorno desde el archivo .env
 
-@router.get("/get_users")
+@router.get("/products_ids")
 def get_users():
-    response = sup.table('user').select("*").execute()
+    response = sup.table('product').select("id").execute()
+    return response
+
+@router.get("/name_and_price_with_id")
+def get_users(product_id):
+    response = sup.table('product').select("name,price").eq("id",product_id).execute()
     return response

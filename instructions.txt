@@ -7,3 +7,9 @@ pip freeze > requirements.txt
 
 Si se quiere hacer el env de nuevo
 pip install -r requirements.txt
+
+
+pip intall only for windows
+pywin32==306
+pywin32-ctypes==0.2.0
+pywinpty==2.0.10

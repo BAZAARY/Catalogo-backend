@@ -2,7 +2,7 @@ python -m venv myenv
 .\myenv\Scripts\activate
 uvicorn main:app --reload
 pip freeze > requirements.txt 
-
+docker container run -dp 8000:8000 -t catalogmicroservice 
 
 
 Si se quiere hacer el env de nuevo
